@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>שיחה רפלקטיבית עם הבינה — נוירופדגוגיה</title>
+<style>
+  :root{
+    --bg1:#2a2350; --bg2:#3a2f6b; --bg3:#1f6b6b;
+    --card:rgba(255,255,255,.96); --ink:#241f33; --muted:#5b5470;
+    --accent:#6d4ea3; --accent2:#1f8a8a; --line:#e7e0f0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0; min-height:100%}
+  body{
+    font-family:"Heebo","Segoe UI",Arial,sans-serif; color:var(--ink);
+    background:linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+    background-attachment:fixed;
+    padding:22px 14px 50px; line-height:1.7;
+  }
+  .wrap{max-width:680px; margin:0 auto}
+  .head{text-align:center; color:#fff; margin:8px 0 16px}
+  .head h1{font-size:1.5rem; margin:0 0 6px; font-weight:800}
+  .head p{margin:0; opacity:.85; font-size:.98rem}
+  .qrpanel{
+    background:var(--card); border-radius:18px; padding:16px;
+    box-shadow:0 12px 34px rgba(0,0,0,.28); margin-bottom:16px; text-align:center;
+  }
+  .qrpanel img{width:172px; height:172px; display:block; margin:4px auto 8px}
+  .qrpanel .qcap{font-size:1rem; font-weight:700; color:var(--accent); margin:0}
+  .qrpanel .qsub{font-size:.86rem; color:var(--muted); margin:4px 0 0}
+  .card{
+    background:var(--card); border-radius:18px; padding:20px 20px 22px;
+    box-shadow:0 12px 34px rgba(0,0,0,.28); margin-bottom:16px;
+  }
+  .steps{display:flex; flex-direction:column; gap:10px; margin:0 0 4px}
+  .step{display:flex; gap:12px; align-items:flex-start}
+  .num{flex:none; width:30px; height:30px; border-radius:50%;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:.95rem}
+  .step p{margin:3px 0; font-size:1rem}
+  .promptbox{
+    background:#faf8fe; border:1px solid var(--line); border-radius:14px;
+    padding:16px 16px; margin:6px 0 0; font-size:.97rem; color:#2e2840;
+    max-height:240px; overflow:auto; white-space:pre-wrap; line-height:1.75;
+  }
+  .copybtn{
+    width:100%; margin-top:16px; border:0; cursor:pointer;
+    background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff;
+    font-family:inherit; font-size:1.18rem; font-weight:800; padding:16px;
+    border-radius:14px; box-shadow:0 6px 18px rgba(109,78,163,.4);
+    transition:transform .08s ease, filter .2s ease;
+  }
+  .copybtn:active{transform:translateY(1px)}
+  .copybtn.done{background:linear-gradient(135deg,#1f8a8a,#2faa6a)}
+  .hint{font-size:.9rem; color:var(--muted); text-align:center; margin-top:12px}
+  .foot{text-align:center; color:#fff; opacity:.72; font-size:.82rem; margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <h1>שיחה רפלקטיבית עם הבינה</h1>
+    <p>קורס נוירופדגוגיה ו-AI · המפגש המסכם</p>
+  </div>
+
+  <div class="qrpanel">
+    <img src="qr.png" alt="ברקוד לדף זה">
+    <p class="qcap">📱 סרקו כדי לפתוח את הדף בנייד</p>
+    <p class="qsub">פתחו את מצלמת הטלפון וכוונו לברקוד</p>
+  </div>
+
+  <div class="card">
+    <div class="steps">
+      <div class="step"><div class="num">1</div><p>פתחו את אפליקציית <strong>ג'מיני</strong> בנייד והדביקו את הפרומפט (כפתור למטה).</p></div>
+      <div class="step"><div class="num">2</div><p>הפעילו את <strong>המצב הקולי</strong> 🎙️ ומצאו פינה שקטה.</p></div>
+      <div class="step"><div class="num">3</div><p>פשוט <strong>דברו</strong> — תנו לשיחה לזרום אליכם.</p></div>
+    </div>
+
+    <button class="copybtn" id="copyBtn">📋 העתקת הפרומפט</button>
+    <p class="hint">אחרי ההעתקה — עברו לג'מיני, הדביקו, ופתחו מצב קולי.</p>
+
+    <div class="promptbox" id="prompt">אני מבקש שתהיה שותף לשיחה רפלקטיבית קולית. אני מורה/מנהלת/סגנית ואיש חינוך, שזה עתה סיימה קורס ייחודי המשלב נוירופדגוגיה ובינה מלאכותית. בקורס עסקנו בהבנת הלמידה דרך מנגנוני המוח, ורתימת הבינה המלאכותית ככלי שמעצים את העבודה הפדגוגית שלנו.
+
+לאורך הדרך פגשנו מושגים כמו: מנגנון הזיכרון וחוק הֶבּ ("Fire together, wire together"), מוטיבציה פנימית וחיצונית, מנגנון הלחץ והאמיגדלה, מנגנון הקשב והניווט הקוגניטיבי, מצב ה-flow, הלומד העצמאי, "המורה כאומן", עבודה עם מכוונים נוירופדגוגיים.
+
+מה אני מבקש ממך:
+נהל איתי שיחה קולית — חמה, אישית ובגובה העיניים — שתעזור לי לעשות רפלקציה על הדרך שעברתי בקורס. מי אני היום כמורה/מנהלת/סגנית לאור מה שלקחתי מהתהליך שעברנו, ומהו ה-"why" הפדגוגי שמניע אותי.
+
+איך לנהל את השיחה:
+1. שאל אותי שאלה אחת בכל פעם, והמתן לתשובתי.
+2. מדי פעם, בעדינות, ורק אם זה מתאים ולא מאולץ, קשור את מה שאני אומר בחזרה למושגי הקורס (המוח, הקשב, המוטיבציה, חוק הב, המורה כאומן) ולזהות שלי כנוירופדגוג. אל תעשה זאת בכל תשובה.
+3. עזור לי להבחין בין מה שעשיתי תמיד מתוך אינטואיציה, לבין מה שאני יודע עכשיו להמשיג בעזרת התיאוריה.
+4. שמור על טון סקרן ומכבד. אל תטיף, ואל תסכם מוקדם מדי. תן לי לחשוב בקול.
+5. לקראת סוף השיחה, עזור לי לזקק תובנה אחת או מושג אחד מהקורס שמהדהד לי במיוחד — משהו שאוכל לקחת איתי וליצור סביבו ייצוג יחד עם קבוצת בית הספר שלי.
+
+עכשיו אני מתחיל לדבר. שאל אותי את השאלה הראשונה.</div>
+  </div>
+
+  <div class="foot">תום הגלעדי · אהוד נורי · ורד עמית</div>
+</div>
+
+<script>
+  const btn = document.getElementById('copyBtn');
+  const text = document.getElementById('prompt').innerText;
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const r = document.createRange(); r.selectNode(document.getElementById('prompt'));
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand('copy'); } catch(_){}
+      s.removeAllRanges();
+    }
+    btn.classList.add('done');
+    btn.textContent = '✓ הפרומפט הועתק!';
+    setTimeout(() => { btn.classList.remove('done'); btn.textContent = '📋 העתקת הפרומפט'; }, 2200);
+  });
+</script>
+</body>
+</html>
